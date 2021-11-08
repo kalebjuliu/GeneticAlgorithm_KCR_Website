@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'diet/css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
+        $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            numVisible: 1
+        });
+
+    </script>
+    <style>
+        blockquote {
+            border-left: 5px solid #00bfa5;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>KCR | Expert System</title>
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper teal accent-4">
+                <a href="#!" class="brand-logo" style="padding-left: 1rem;">KCR</a>
+                <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
+                <ul class="right hide-on-med-and-down">
+                    {% if user.is_authenticated %}
+                    <li><a href="/data">Data BMR & BMI</a></li>
+                    <li><a href="/">Rekomendasi Diet</a></li>
+                    <li><a href="">{{user.username}}</a< /li>
+                    <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- <ul class="side-nav" id="mobile-demo">
+        {% if user.is_authenticated %}
+        <li><a href="/data">Data BMR & BMI</a></li>
+        <li><a href="/">Rekomendasi Diet</a></li>
+        <li><a href="#">{{user.username}}</a< /li>
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+        {% endif %}
+    </ul> -->
+
+    <!-- <nav>
+        <div class="nav-wrapper teal accent-4">
+            <a href="/" class="brand-logo" style="padding-left: 1rem;">KCR</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% if user.is_authenticated %}
+                <li><a href="/data">Data BMR & BMI</a></li>
+                <li><a href="/">Rekomendasi Diet</a></li>
+                <li>{{user.username}}</li>
+                <li><a href="/logout">Logout</a></li>
+                {% else %}
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav> -->
+
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+    <script>M.toast({ html: "{{message}}", classes: "blue rounded", displayLength: 2000 })</script>
+    {% elif message.tags == 'error' %}
+    <script>M.toast({ html: "{{message}}", classes: "red rounded", displayLength: 2000 })</script>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <div class="container">
+        <br>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+</body>
+
+</html>

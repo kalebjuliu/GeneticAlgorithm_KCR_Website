@@ -15,6 +15,15 @@ menu_laukHewani = [
     Menu('Ikan Patin bakar', 17.50, 6.30, 4.30, 144),
     Menu('Ayam goreng kentucky', 32.10, 16.10, 1.10, 286),
 ]
+# gulai ikan
+# sardine ABC
+# ayam taliwang
+# kalio
+# telur dadar
+# ikan bandeng
+# sop daging sapi
+# tumis bandeng
+# sate ayam
 menu_laukNabati = [
     Menu('Tahu bacem', 1.90, 1.47, 1.09, 24),
     Menu('Tahu goreng', 9.7, 8.50, 2.50, 115),
@@ -23,6 +32,8 @@ menu_laukNabati = [
     Menu('Tempe bacem', 3.73, 3.1, 2.23, 49),
     Menu('Bakwan', 8.20, 10.20, 39, 280),
 ]
+# perkedel kentang
+# kentang balado
 menu_sayur = [
     Menu('Tumis kangkung', 2.6, 2.7, 3.1, 39),
     Menu('Sayur asem', 0.7, 0.6, 5, 29),
@@ -32,6 +43,12 @@ menu_sayur = [
     Menu('Tumis jamur', 3.87, 0.36, 4.36, 28),
     Menu('Tumis kol', 1.30, 2.60, 6, 45),
 ]
+# tumis bayam bersantan
+# labu siam tumis
+# plecing kangkung
+# bayam kukus
+# kangkung kukus
+# kacang panjang rebus
 menu_nasi = [
     Menu('Nasi merah', 2.8, 0.4, 32.5, 149),
     Menu('Nasi putih', 3, 0.3, 39.8, 180),

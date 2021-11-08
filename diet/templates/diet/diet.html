@@ -1,0 +1,290 @@
+{% extends "diet/header.html" %}
+
+{% block content %}
+
+<h5>Rekomendasi Diet</h5><br><br>
+
+{% if user.is_authenticated and menu_senin|length != 0 %}
+
+
+<div class="row">
+    <div class="col s6">
+        {% for user in users %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Data BMI</span>
+                <h6>BMI: {{user.bmi|floatformat}}</h6>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col s6">
+        {% for user in users %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Data BMR</span>
+                <h6>BMR: {{user.bmr|floatformat}}</h6>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+<blockquote>
+    <h5>Senin</h5>
+</blockquote>
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Protein</th>
+            <th>Lemak</th>
+            <th>Karbo</th>
+            <th>Kalori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu in menu_senin %}
+        {% for i in menu %}
+        <tr>
+            <td>{{i.nama}}</td>
+            <td>{{i.protein}}</td>
+            <td>{{i.lemak}}</td>
+            <td>{{i.karbo}}</td>
+            <td>{{i.kalori}}</td>
+        </tr>
+        {% ifequal forloop.counter|divisibleby:"4" True %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endifequal %}
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<blockquote>
+    <h5>Selasa</h5>
+</blockquote>
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Protein</th>
+            <th>Lemak</th>
+            <th>Karbo</th>
+            <th>Kalori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu in menu_selasa %}
+        {% for i in menu %}
+        <tr>
+            <td>{{i.nama}}</td>
+            <td>{{i.protein}}</td>
+            <td>{{i.lemak}}</td>
+            <td>{{i.karbo}}</td>
+            <td>{{i.kalori}}</td>
+        </tr>
+        {% ifequal forloop.counter|divisibleby:"4" True %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endifequal %}
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<blockquote>
+    <h5>Rabu</h5>
+</blockquote>
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Protein</th>
+            <th>Lemak</th>
+            <th>Karbo</th>
+            <th>Kalori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu in menu_rabu %}
+        {% for i in menu %}
+        <tr>
+            <td>{{i.nama}}</td>
+            <td>{{i.protein}}</td>
+            <td>{{i.lemak}}</td>
+            <td>{{i.karbo}}</td>
+            <td>{{i.kalori}}</td>
+        </tr>
+        {% ifequal forloop.counter|divisibleby:"4" True %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endifequal %}
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<blockquote>
+    <h5>Kamis</h5>
+</blockquote>
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Protein</th>
+            <th>Lemak</th>
+            <th>Karbo</th>
+            <th>Kalori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu in menu_kamis %}
+        {% for i in menu %}
+        <tr>
+            <td>{{i.nama}}</td>
+            <td>{{i.protein}}</td>
+            <td>{{i.lemak}}</td>
+            <td>{{i.karbo}}</td>
+            <td>{{i.kalori}}</td>
+        </tr>
+        {% ifequal forloop.counter|divisibleby:"4" True %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endifequal %}
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<blockquote>
+    <h5>Jumat</h5>
+</blockquote>
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Protein</th>
+            <th>Lemak</th>
+            <th>Karbo</th>
+            <th>Kalori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu in menu_jumat %}
+        {% for i in menu %}
+        <tr>
+            <td>{{i.nama}}</td>
+            <td>{{i.protein}}</td>
+            <td>{{i.lemak}}</td>
+            <td>{{i.karbo}}</td>
+            <td>{{i.kalori}}</td>
+        </tr>
+        {% ifequal forloop.counter|divisibleby:"4" True %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endifequal %}
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<blockquote>
+    <h5>Sabtu</h5>
+</blockquote>
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Protein</th>
+            <th>Lemak</th>
+            <th>Karbo</th>
+            <th>Kalori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu in menu_sabtu %}
+        {% for i in menu %}
+        <tr>
+            <td>{{i.nama}}</td>
+            <td>{{i.protein}}</td>
+            <td>{{i.lemak}}</td>
+            <td>{{i.karbo}}</td>
+            <td>{{i.kalori}}</td>
+        </tr>
+        {% ifequal forloop.counter|divisibleby:"4" True %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endifequal %}
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<blockquote>
+    <h5>Minggu</h5>
+</blockquote>
+<table>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Protein</th>
+            <th>Lemak</th>
+            <th>Karbo</th>
+            <th>Kalori</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for menu in menu_minggu %}
+        {% for i in menu %}
+        <tr>
+            <td>{{i.nama}}</td>
+            <td>{{i.protein}}</td>
+            <td>{{i.lemak}}</td>
+            <td>{{i.karbo}}</td>
+            <td>{{i.kalori}}</td>
+        </tr>
+        {% ifequal forloop.counter|divisibleby:"4" True %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endifequal %}
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h6>Tidak ada data BMI dan BMR</h6> Silahkan isi data <a href="/data">disini</a>
+{% endif %}
+
+{% endblock %}
