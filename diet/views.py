@@ -145,7 +145,7 @@ def homepage(request):
                 bmr = user_info.bmr
                 limit_kalori = round(bmr * 7)
             final_menu = []
-            population = generate_population(10)
+            population = generate_population(30)
             fitness = generate_fitness(limit_kalori, population)
 
             generation = 0

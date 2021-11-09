@@ -11,6 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         $(document).ready(function () {
             $('select').formSelect();
@@ -28,11 +31,16 @@
 
     </script>
     <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
         blockquote {
             border-left: 5px solid #00bfa5;
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <title>KCR | Expert System</title>
 </head>
 
@@ -41,12 +49,13 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper teal accent-4">
-                <a href="#!" class="brand-logo" style="padding-left: 1rem;">KCR</a>
+                <a href="" class="brand-logo" style="padding-left: 1rem; font-size: 1.5rem;"><span
+                        style="font-weight: bold;">KCR</span> EXPERT</a>
                 <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
                 <ul class="right hide-on-med-and-down">
                     {% if user.is_authenticated %}
                     <li><a href="/data">Data BMR & BMI</a></li>
-                    <li><a href="/">Rekomendasi Diet</a></li>
+                    <li><a href="/">Rekomendasi Makanan</a></li>
                     <li><a href="">{{user.username}}</a< /li>
                     <li><a href="/logout">Logout</a></li>
                     {% else %}

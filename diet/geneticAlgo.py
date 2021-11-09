@@ -223,3 +223,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Pengkodean Kromosom
+# Pembentukan posisi awal
+# Evaluasi fungsi kecocokan (fitness)
+# Seleksi
+# Persilangan / Crossover
+# Mutasi
+
+# https://www.sciencedirect.com/topics/engineering/chromosome-representation
+# https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.7571&rep=rep1&type=pdf
+# https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8426051

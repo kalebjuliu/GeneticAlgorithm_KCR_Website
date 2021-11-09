@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h5>Rekomendasi Diet</h5><br><br>
+<h6 style="font-weight: 600; color: #393D46;">Rekomendasi Makanan</h6><br><br>
 
 {% if user.is_authenticated and menu_senin|length != 0 %}
 
@@ -12,8 +12,8 @@
         {% for user in users %}
         <div class="card">
             <div class="card-content">
-                <span class="card-title">Data BMI</span>
-                <h6>BMI: {{user.bmi|floatformat}}</h6>
+                <span class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #393D46;">Data BMI</span>
+                <h4 style="color: #00bfa5; font-weight: bold;">{{user.bmi|floatformat}}</h4>
             </div>
         </div>
         {% endfor %}
@@ -22,8 +22,8 @@
         {% for user in users %}
         <div class="card">
             <div class="card-content">
-                <span class="card-title">Data BMR</span>
-                <h6>BMR: {{user.bmr|floatformat}}</h6>
+                <span class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #393D46;">Data BMR</span>
+                <h4 style="color: #00bfa5; font-weight: bold;">{{user.bmr|floatformat}}</h4>
             </div>
         </div>
         {% endfor %}
