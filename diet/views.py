@@ -176,8 +176,8 @@ def homepage(request):
                         for j in i:
                             kalori_sementara += j.kalori
                             # print(kalori_sementara)
-                print(f"Best solution found at {generation} generations!")
-                print(f"=========================")
+                #print(f"Best solution found at {generation} generations!")
+                #print(f"=========================")
 
             final_menu_senin = final_menu[0:3]
             final_menu_selasa = final_menu[3:6]
