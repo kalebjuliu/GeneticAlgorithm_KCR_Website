@@ -164,7 +164,7 @@ def homepage(request):
                 fitness = generate_fitness(limit_kalori, population)
 
                 # os.system('cls' if os.name == 'nt' else 'clear')
-                print(f"Best Fitness: {max(fitness)}")
+                #print(f"Best Fitness: {max(fitness)}")
 
                 generation += 1
                 if(generation == 1000 or max(fitness) == 100):
