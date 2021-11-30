@@ -164,7 +164,7 @@ def homepage(request):
                 fitness = generate_fitness(limit_kalori, population)
 
                 # os.system('cls' if os.name == 'nt' else 'clear')
-                #print(f"Best Fitness: {max(fitness)}")
+                print(f"Best Fitness: {max(fitness)}")
 
                 generation += 1
                 if(generation == 1000 or max(fitness) == 100):
@@ -176,8 +176,8 @@ def homepage(request):
                         for j in i:
                             kalori_sementara += j.kalori
                             # print(kalori_sementara)
-                #print(f"Best solution found at {generation} generations!")
-                #print(f"=========================")
+                print(f"Best solution found at {generation} generations!")
+                print(f"=========================")
 
             final_menu_senin = final_menu[0:3]
             final_menu_selasa = final_menu[3:6]
@@ -271,6 +271,14 @@ def data(request):
                 tingkat_aktivitas = form.cleaned_data.get('tingkat_aktivitas')
                 usia = form.cleaned_data.get('umur')
 
+
+                if ((tinggi_badan <= 0) or (berat_badan <= 0) or (usia <= 0) or (tinggi_badan > 272) or (berat_badan > 635) or (usia > 122)):
+                    messages.error(request, f"Please reinput your data correctly")
+                    return render(request,
+                        "diet/data.html",
+                        context={"form": form})
+
+
                 bmi = berat_badan / ((tinggi_badan/100) * (tinggi_badan/100))
 
                 if(jenis_kelamin == 'Laki-laki'):
@@ -290,6 +298,13 @@ def data(request):
                     bmr = bmr * 1.725
                 elif(tingkat_aktivitas == "Intense"):
                     bmr = bmr * 1.9
+
+                if (bmr <= 0 or bmi <= 0):
+                    messages.error(request, f"Please reinput your data correctly")
+                    return render(request,
+                        "diet/data.html",
+                        context={"form": form})
+                
 
                 obj.bmi = bmi
                 obj.bmr = bmr
